@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wiki</title>
+	<style type="text/css">
+		.history-table {
+    border-collapse: collapse;
+}
+
+.history-table .date-cell {
+    width: 200px;
+}
+
+.history-table .content-cell {
+    padding: 10px;
+}
+
+.history-table .link-cell {
+    padding: 0 5px;
+}
+
+.history-row {
+    border-bottom: 1px solid #333;
+}
+
+.history-row:last-child {
+    border-bottom-style: none;
+}
+body
+{
+	position: absolute;
+	font: sans-serif;
+	left: 200px;
+	top: 60px;
+	right: 300px;
+}
+
+a.acount
+		{
+			position: absolute;
+			right: 202px;
+			top: -50px;
+			text-decoration: none;
+			color: grey;
+		}
+		a.signup
+		{
+			position: absolute;
+			right: 150px;
+			top: -50px;
+			text-decoration: none;
+			color: grey;	
+		}
+
+</style>
+</head>
+<body>
+	
+<a class="acount" href="/{{link}}">{{ acount }}</a><a class="signup" href="/signup">| signup</a>
+
+
+	<table class="history-table">
+	    {% for page in versions %}
+	        <tr class="history-row">
+	            <td class="date-cell">
+	                {{page.created}}
+	            </td>
+	            
+	            <td class ="content-cell">	
+	                {{page.content}}
+	            </td>
+
+
+	            <td class="link-cell">
+	                <a class="gray-link" href="{{ code }}?v={{page.version}}">view</a>
+	            </td>
+
+	            {% if logged %}
+	            <td class="link-cell">
+	                <a class="gray-link" href="/_edit{{code}}?v={{page.version}}">edit</a>
+	            </td>
+	            {% endif %}
+	            
+	          
+	        </tr>
+	    {% endfor %}
+	</table>
+</body>
+</html>

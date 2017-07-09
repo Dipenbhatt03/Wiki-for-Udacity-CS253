@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Page</title>
+	<style type="text/css">
+		html
+		{
+			height: 100%;
+		}
+		body
+		{
+			position: absolute;
+			top:70px;
+			left: 400px;
+			height: 100%;
+
+
+		}
+
+	</style>
+</head>
+
+<body>
+<a href="{{code}}" style="color: grey;text-decoration: none;position: absolute;top: -50px;right: 2px;left: 700px;">view</a>
+<form method="post">
+	<textarea name="content" style="height: 400px;width: 400px;">{{ content }}</textarea>
+	<input type="submit" name="submit" style="position: absolute;">
+</form>
+</body>
+</html>

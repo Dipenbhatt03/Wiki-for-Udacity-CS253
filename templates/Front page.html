@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wiki</title>
+	<style type="text/css">
+		a.edit
+		{
+			position: absolute;
+			right: 353px;
+			top: -50px;
+			text-decoration: none;
+			color: grey;
+		}
+		a.history
+		{
+			position: absolute;
+			right: 305px;
+			top: -50px;
+			text-decoration: none;
+			color: grey;	
+		}
+		a.acount
+		{
+			position: absolute;
+			right: 202px;
+			top: -50px;
+			text-decoration: none;
+			color: grey;
+		}
+		a.signup
+		{
+			position: absolute;
+			right: 150px;
+			top: -50px;
+			text-decoration: none;
+			color: grey;	
+		}
+
+		p
+		{
+			position: absolute;
+			right: 297px;
+			top: -67px;
+			text-decoration: none;
+			color: grey;
+		}
+
+		body
+		{
+			position: relative;
+			top: 50px;
+
+		}
+	</style>
+</head>
+
+<body>
+{% if logged %}
+	<a class="edit" href="/_edit{{ code }}{{p_vs}}">edit |</a>
+{% endif %}
+<a class="history" href="/_history{{code}}">history</a>
+
+
+<a class="acount" href="/{{link}}">{{ acount }}</a><a class="signup" href="/signup">| signup</a>
+
+
+
+{{ content }}
+
+</body>
+</html>
